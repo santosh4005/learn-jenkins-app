@@ -57,8 +57,7 @@ pipeline {
     }
     post {
         always {
-            echo "Cleaning up workspace"
-            cleanWs()
+            junit 'test-results/junit.xml'
         }
     }
 }
