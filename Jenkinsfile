@@ -31,13 +31,10 @@ pipeline {
                 sh '''
                     echo "Test stage"
                     ls -la
-                    node -v
-                    npm -v
-                    npm ci
-                    npm test
                     echo "Looking for index.html file in build directory"
-                    grep -R "index.html" build/
+                    test -f build/index.html
                     echo "$?"
+                    npm test
                 '''
             }
         }
