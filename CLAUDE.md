@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-A minimal Create React App project used as the sample application for a Jenkins CI/CD course ("Learn Jenkins on Udemy"). The app itself is intentionally trivial (a single-page CRA starter displaying a hardcoded "Application version" string); the real focus of this repo is exercising a CI pipeline (build → unit test → e2e test) rather than application features. There is no Jenkinsfile checked into the repo — the Jenkins pipeline configuration lives outside this checkout (in the Jenkins server/job config), so don't expect to find it here.
+A minimal Create React App project used as the sample application for a Jenkins CI/CD course ("Learn Jenkins on Udemy"). The app itself is intentionally trivial (a single-page CRA starter displaying a hardcoded "Application version" string); the real focus of this repo is exercising a CI pipeline (build → unit test → e2e test) rather than application features. The `Jenkinsfile` at the repo root defines the pipeline as it evolves through the course.
 
 ## Commands
 
