@@ -34,8 +34,9 @@ pipeline {
                     echo "Looking for index.html file in build directory"
                     test -f build/index.html
                     echo "$?"
-                    npm test
+                    npm test                    
                 '''
+                junit 'test-results/junit.xml'
             }
         }
         stage ('E2E Test') {
@@ -43,7 +44,6 @@ pipeline {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
                     reuseNode true
-
                 }
             }
             steps {
@@ -58,7 +58,7 @@ pipeline {
     }
     post {
         always {
-            junit 'test-results/junit.xml'
+           echo "Cleaning up..."
         }
     }
 }
