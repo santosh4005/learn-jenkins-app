@@ -35,6 +35,9 @@ pipeline {
                     npm -v
                     npm ci
                     npm test
+                    echo "Looking for index.html file in build directory"
+                    grep -R "index.html" build/
+                    echo "$?"
                 '''
             }
         }
