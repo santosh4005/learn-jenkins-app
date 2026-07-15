@@ -88,7 +88,7 @@ pipeline {
                     node_modules/.bin/netlify --version
                     echo "Deploying to Netlify. site id: $NETLIFY_SITE_ID"
                     node_modules/.bin/netlify status
-                    node_modules/.bin/netlify deploy --auth=$NETLIFY_AUTH_TOKEN --dir=build
+                    node_modules/.bin/netlify deploy --auth=$NETLIFY_AUTH_TOKEN --dir=build > deploy-output.json
                 '''
                 script {
                     env.DEPLOY_URL = sh(script: "node_modules/.bin/node-jq -r '.deploy_url' deploy-output.json", returnStdout: true).trim()
